@@ -22,7 +22,7 @@ const Index = ({users}) => {
                         <Link href={`/${user._id}`}>
                           <Button primary>View</Button>
                           </Link>
-                          <Link href={`/${user._id}/edit`}>
+                          <Link href={`/${user._id}/editUser`}>
                           <Button primary>Edit</Button>
                           </Link>
                         </Card.Content>
