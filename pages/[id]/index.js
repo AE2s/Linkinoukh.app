@@ -21,7 +21,7 @@ const User = ({ user }) => {
   const deleteUser = async () => {
     const userId = router.query.id
     try {
-      const deleted = await fetch(`http://localhost:3000/api/users/${userId}`, {
+      const deleted = await fetch(`${process.env.URL}/api/users/${userId}`, {
         method: 'Delete',
       })
 
@@ -65,7 +65,7 @@ const User = ({ user }) => {
 }
 
 User.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/users/${id}`)
+  const res = await fetch(`${process.env.URL}/api/users/${id}`)
   const { data } = await res.json()
 
   return { user: data }
