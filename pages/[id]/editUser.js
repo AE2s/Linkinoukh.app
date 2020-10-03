@@ -21,7 +21,7 @@ const EditUser = ({ user }) => {
   const updateUser = async () => {
     try {
       const res = await fetch(
-        `${process.env.URL}/api/users/${router.query.id}`,
+        `https://linkinoukh-app.vercel.app//api/users/${router.query.id}`,
         {
           method: 'PUT',
           headers: {
@@ -140,7 +140,7 @@ const EditUser = ({ user }) => {
 }
 
 EditUser.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`${process.env.URL}/api/users/${id}`)
+  const res = await fetch(`https://linkinoukh-app.vercel.app//api/users/${id}`)
 
   const { data } = await res.json()
 

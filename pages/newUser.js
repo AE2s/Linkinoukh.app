@@ -20,7 +20,7 @@ const NewUser = () => {
 
   const createUser = async () => {
     try {
-      const res = await fetch(`${process.env.URL}/api/users`, {
+      const res = await fetch(`https://linkinoukh-app.vercel.app/api/users`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

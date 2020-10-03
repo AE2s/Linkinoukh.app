@@ -1,38 +1,10 @@
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import { Button, Card } from 'semantic-ui-react'
+import Users from '../components/users'
 
 const Index = ({ users }) => {
-  return (
-    <div className="user-container">
-      <h1>Linkinoukh</h1>
-      <div className="grid wrapper">
-        {users.map((user) => {
-          return (
-            <div key={user._id}>
-              <Card>
-                <Card.Content>
-                  <Card.Header>
-                    <Link href={`/${user._id}`}>
-                      <a>{user.firstname}</a>
-                    </Link>
-                  </Card.Header>
-                </Card.Content>
-                <Card.Content extra>
-                  <Link href={`/${user._id}`}>
-                    <Button primary>View</Button>
-                  </Link>
-                  <Link href={`/${user._id}/editUser`}>
-                    <Button primary>Edit</Button>
-                  </Link>
-                </Card.Content>
-              </Card>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
+  return <Users usersList={users} />
 }
 
 Index.getInitialProps = async () => {
